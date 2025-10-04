@@ -113,4 +113,8 @@ const sunLight=new THREE.PointLight(0xffffff,3,0)
     scene.add(new THREE.AmbientLight(0xffffff,1.2))
 
 
+NormalMap:new THREE.textureLoader().load("normal.earth.jpg"),
+
+
+
 
