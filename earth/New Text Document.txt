@@ -124,4 +124,43 @@ bumpMap:new THREE.TextureLoader().load("https://threejs.org/examples/textures/pl
 
 
 
+// bumpTexture 替换成 displacementMap
+// craterImg: 小坑灰度图
+function addCraterToDisplacement(displacementMap, craterImg, lat, lng, size){
+  const width = displacementMap.image.width;
+  const height = displacementMap.image.height;
+
+  // 创建临时 canvas
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+
+  // 画原 displacementMap
+  ctx.drawImage(displacementMap.image, 0, 0, width, height);
+
+  // 经纬度 -> 像素位置
+  const {u, v} = latLngToUV(lat, lng, width, height);
+
+  // 在对应位置画小坑
+  ctx.drawImage(craterImg, u - size/2, v - size/2, size, size);
+
+  // 更新 displacementMap
+  displacementMap.image = canvas;
+  displacementMap.needsUpdate = true;
+}
+
+const craterImg = new Image();
+craterImg.src = 'small_crater_gray.png'; // 黑色区域表示凹陷
+craterImg.onload = () => {
+  addCraterToDisplacement(earth.material.displacementMap, craterImg, 30, 120, 20);
+  addCraterToDisplacement(earth.material.displacementMap, craterImg, -10, 45, 15);
+};
+
+
+
+
+
+
+
 
