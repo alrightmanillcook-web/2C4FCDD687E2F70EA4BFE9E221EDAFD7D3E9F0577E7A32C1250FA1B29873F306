@@ -1,3 +1,19 @@
+const scene=new THREE.Scene()
+    const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,5000)
+    camera.position.set(0,50,250)
+    const renderer=new THREE.WebGLRenderer({antialias:true})
+    renderer.setSize(window.innerWidth,window.innerHeight)
+    document.body.appendChild(renderer.domElement)
+    const controls=new THREE.OrbitControls(camera,renderer.domElement)
+    controls.enablePan=false
+    const earthRadius=10
+    controls.minDistance=earthRadius*1.1
+    controls.maxDistance=400
+
+
+
+
+
 const earthOrbit=new THREE.Object3D()
     scene.add(earthOrbit)
 
@@ -12,3 +28,27 @@ const earthOrbit=new THREE.Object3D()
     const earth=new THREE.Mesh(earthGeometry,earthMaterial)
     earth.position.set(150,0,0)
     earthOrbit.add(earth)
+
+
+
+
+
+fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json') .then(res => res.json()) .then(worldData => { const countries = topojson.feature(worldData, worldData.objects.countries); const material = new THREE.LineBasicMaterial({ color: 0xffffff }); countries.features.forEach(feature => { const coords = feature.geometry.coordinates; if (feature.geometry.type === "Polygon") { drawPolygon(coords); } else if (feature.geometry.type === "MultiPolygon") { coords.forEach(polygon => drawPolygon(polygon)); } }); function drawPolygon(polygon) { polygon.forEach(ring => { const points = []; ring.forEach(([lon, lat]) => { points.push(latLngToVector3(lat, lon, earthRadius)); }); const geometry = new THREE.BufferGeometry().setFromPoints(points); const line = new THREE.Line(geometry, material); earth.add(line); }); } }) .catch(err => console.error(err));
+    const clock=new THREE.Clock()
+    function animate(){
+      requestAnimationFrame(animate)
+      const t=clock.getElapsedTime()
+      earth.rotation.y+=0.01
+      earthOrit.rotabtion.y=t*0
+      moon.position.set(Math.cos(t*2)*25,0,Math.sin(t*2)*25)
+      controls.target.copy(earth.getWorldPosition(new THREE.Vector3()))
+      controls.update()
+      renderer.render(scene,camera)
+    }
+    animate()
+
+    window.addEventListener("resize",()=>{
+      camera.aspect=window.innerWidth/window.innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(window.innerWidth,window.innerHeight)
+    })
