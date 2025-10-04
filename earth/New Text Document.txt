@@ -107,6 +107,10 @@ function latLngToVector3(lat,lng,radius){
 
 
 
+const sunLight=new THREE.PointLight(0xffffff,3,0) 
+    sunLight.position.set(0,0,0) 
+    scene.add(sunLight) 
+    scene.add(new THREE.AmbientLight(0xffffff,1.2))
 
 
 
