@@ -163,4 +163,37 @@ craterImg.onload = () => {
 
 
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>MapTiler 卫星地图示例（0GCZRo8V9UPQFhWV1vt6）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    body, html { margin:0; padding:0; height:100%; }
+    #map { width:100%; height:100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+  <script>
+    const MAPTILER_KEY = '0GCZRo8V9UPQFhWV1vt6'; // 在这里填入你免费注册的 MapTiler Key
+
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: `https://api.maptiler.com/maps/satellite/style.json?key=${MAPTILER_KEY}`,
+      center: [116.391,39.907], // 北京中心
+      zoom: 15 // 街道/建筑级别
+    });
+
+    // 添加缩放控件
+    map.addControl(new maplibregl.NavigationControl());
+    // 可选：添加全屏控件
+    map.addControl(new maplibregl.FullscreenControl());
+  </script>
+</body>
+</html>
+
 
