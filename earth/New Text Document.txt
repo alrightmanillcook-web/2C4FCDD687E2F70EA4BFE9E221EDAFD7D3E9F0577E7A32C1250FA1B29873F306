@@ -117,4 +117,11 @@ NormalMap:new THREE.textureLoader().load("normal.earth.jpg"),
 
 
 
+map:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"),
+specularMap:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_specular_2048.jpg"),
+bumpMap:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_bump_2048.jpg"),
+
+
+
+
 
