@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Earth Simulator</title>
+  <style>
+    body{margin:0;overflow:hidden}
+    canvas{display:block}
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.138.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+  <script>
+    const scene=new THREE.Scene()
+    const camera=new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,5000)
+    camera.position.set(0,50,250)
+    const renderer=new THREE.WebGLRenderer({antialias:true})
+    renderer.setSize(window.innerWidth,window.innerHeight)
+    document.body.appendChild(renderer.domElement)
+    const controls=new THREE.OrbitControls(camera,renderer.domElement)
+    controls.enablePan=false
+    const earthRadius=10
+    controls.minDistance=earthRadius*1.1
+    controls.maxDistance=400
+
+    const stars=new THREE.Mesh(
+      new THREE.SphereGeometry(3000,64,64),
+      new THREE.MeshBasicMaterial({
+        map:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/starfield.jpg"),
+        side:THREE.BackSide
+      })
+    )
+    scene.add(stars)
+
+sunLight.position.set(0,0,0) 
+    scene.add(sunLight) 
+    scene.add(new THREE.AmbientLight(0xffffff,1.2))
+
+    const earthOrbit=new THREE.Object3D()
+    scene.add(earthOrbit)
+
+    const earthGeometry=new THREE.SphereGeometry(earthRadius,128,128)
+    const earthMaterial=new THREE.MeshPhongMaterial({
+      map:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"),
+      
+      specularMap:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_specular_2048.jpg"),
+      bumpMap:new THREE.TextureLoader().load("https://threejs.org/examples/textures/planets/earth_bump_2048.jpg"),
+      bumpScale:4,
+      side:THREE.FrontSide
+    })
+    const earth=new THREE.Mesh(earthGeometry,earthMaterial)
+    earth.position.set(150,0,0)
+    earthOrbit.add(earth)
+
+function latLngToVector3(lat,lng,radius){
+      const phi=(90-lat)*Math.PI/180
+      const theta=(lng+180)*Math.PI/180
+      const x=-radius*Math.sin(phi)*Math.cos(theta)
+      const y=radius*Math.cos(phi)
+      const z=radius*Math.sin(phi)*Math.sin(theta)
+      return new THREE.Vector3(x,y,z)
+    }
+
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+  .then(res => res.json())
+  .then(worldData => {
+    const countries = topojson.feature(worldData, worldData.objects.countries);
+    const material = new THREE.LineBasicMaterial({ color: 0xffffff });
+
+    countries.features.forEach(feature => {
+      const coords = feature.geometry.coordinates;
+      let allCoords = [];
+
+      if (feature.geometry.type === "Polygon") {
+        drawPolygon(coords);
+        allCoords = coords.flat();
+      } else if (feature.geometry.type === "MultiPolygon") {
+        coords.forEach(polygon => drawPolygon(polygon));
+        allCoords = coords.flat(2);
+      }
+
+      const center = getPolygonCenter([allCoords]);
+      addCountryLabel(feature.properties.name || "Unknown", center);
+    }); 
+    } )
+
+    function drawPolygon(polygon) {
+      polygon.forEach(ring => {
+        const points = [];
+        ring.forEach(([lon, lat]) => { points.push(latLngToVector3(lat, lon, earthRadius)); });
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const line = new THREE.Line(geometry, material);
+        earth.add(line);
+      });
+    }
+
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json') .then(res => res.json()) .then(worldData => { const countries = topojson.feature(worldData, worldData.objects.countries); const material = new THREE.LineBasicMaterial({ color: 0xffffff }); countries.features.forEach(feature => { const coords = feature.geometry.coordinates; if (feature.geometry.type === "Polygon") { drawPolygon(coords); } else if (feature.geometry.type === "MultiPolygon") { coords.forEach(polygon => drawPolygon(polygon)); } }); function drawPolygon(polygon) { polygon.forEach(ring => { const points = []; ring.forEach(([lon, lat]) => { points.push(latLngToVector3(lat, lon, earthRadius)); }); const geometry = new THREE.BufferGeometry().setFromPoints(points); const line = new THREE.Line(geometry, material); earth.add(line); }); } }) .catch(err => console.error(err));
+    const clock=new THREE.Clock()
+    function animate(){
+      requestAnimationFrame(animate)
+      const t=clock.getElapsedTime()
+      earth.rotation.y+=0.01
+      earthOrbit.rotation.y=t*0
+   
+      controls.target.copy(earth.getWorldPosition(new THREE.Vector3()))
+      controls.update()
+      renderer.render(scene,camera)
+    }
+
+  
+animate()
+
+    window.addEventListener("resize",()=>{
+      camera.aspect=window.innerWidth/window.innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(window.innerWidth,window.innerHeight)
+    })
+  </script>
+</body>
+</html>
