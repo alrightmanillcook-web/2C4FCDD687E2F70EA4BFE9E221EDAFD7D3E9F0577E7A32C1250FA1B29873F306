@@ -197,3 +197,5 @@ craterImg.onload = () => {
 </html>
 
 
+// 限制拖动范围：只显示一个完整的世界
+    map.setMaxBounds([[-180, -85], [180, 85]]); 
