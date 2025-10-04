@@ -52,3 +52,48 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json') .then(re
       camera.updateProjectionMatrix()
       renderer.setSize(window.innerWidth,window.innerHeight)
     })
+
+
+
+function latLngToVector3(lat,lng,radius){
+      const phi=(90-lat)*Math.PI/180
+      const theta=(lng+180)*Math.PI/180
+      const x=-radius*Math.sin(phi)*Math.cos(theta)
+      const y=radius*Math.cos(phi)
+      const z=radius*Math.sin(phi)*Math.sin(theta)
+      return new THREE.Vector3(x,y,z)
+    }
+
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+  .then(res => res.json())
+  .then(worldData => {
+    const countries = topojson.feature(worldData, worldData.objects.countries);
+    const material = new THREE.LineBasicMaterial({ color: 0xffffff });
+
+    countries.features.forEach(feature => {
+      const coords = feature.geometry.coordinates;
+      let allCoords = [];
+
+      if (feature.geometry.type === "Polygon") {
+        drawPolygon(coords);
+        allCoords = coords.flat();
+      } else if (feature.geometry.type === "MultiPolygon") {
+        coords.forEach(polygon => drawPolygon(polygon));
+        allCoords = coords.flat(2);
+      }
+
+      const center = getPolygonCenter([allCoords]);
+      addCountryLabel(feature.properties.name || "Unknown", center);
+    }); 
+    } )
+
+    function drawPolygon(polygon) {
+      polygon.forEach(ring => {
+        const points = [];
+        ring.forEach(([lon, lat]) => { points.push(latLngToVector3(lat, lon, earthRadius)); });
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const line = new THREE.Line(geometry, material);
+        earth.add(line);
+      });
+    }
+
