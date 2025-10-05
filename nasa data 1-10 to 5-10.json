@@ -1,0 +1,762 @@
+[
+  {
+    "diameter_m": 217.7910249632,
+    "energy_megatons": 371.4889926818341,
+    "id": "3427459",
+    "miss_distance_km": 24264564.149475206,
+    "name": "(2008 SS)",
+    "velocity_km_s": 13.840886398
+  },
+  {
+    "diameter_m": 179.4898847799,
+    "energy_megatons": 91.16092403357881,
+    "id": "3716631",
+    "miss_distance_km": 23160725.07452431,
+    "name": "(2015 HN9)",
+    "velocity_km_s": 9.1642153983
+  },
+  {
+    "diameter_m": 56.7596852866,
+    "energy_megatons": 11.668174397471429,
+    "id": "3720000",
+    "miss_distance_km": 64538544.87798536,
+    "name": "(2015 KT120)",
+    "velocity_km_s": 18.4370903916
+  },
+  {
+    "diameter_m": 23.6613750114,
+    "energy_megatons": 0.20812610358167863,
+    "id": "54201807",
+    "miss_distance_km": 6508610.150578066,
+    "name": "(2021 SY3)",
+    "velocity_km_s": 9.1485908655
+  },
+  {
+    "diameter_m": 32.2136531891,
+    "energy_megatons": 0.2659989450184488,
+    "id": "54212590",
+    "miss_distance_km": 55059459.86577525,
+    "name": "(2021 UJ1)",
+    "velocity_km_s": 6.5107479995
+  },
+  {
+    "diameter_m": 8.4341239412,
+    "energy_megatons": 0.026418995521944703,
+    "id": "54265626",
+    "miss_distance_km": 63720865.629522026,
+    "name": "(2022 FL1)",
+    "velocity_km_s": 15.3161312635
+  },
+  {
+    "diameter_m": 241.0127281611,
+    "energy_megatons": 259.59268804290616,
+    "id": "54300842",
+    "miss_distance_km": 11782143.906704586,
+    "name": "(2022 QG41)",
+    "velocity_km_s": 9.9388733585
+  },
+  {
+    "diameter_m": 45.0858206172,
+    "energy_megatons": 0.09080438899705122,
+    "id": "54309253",
+    "miss_distance_km": 38646978.185169995,
+    "name": "(2022 SK21)",
+    "velocity_km_s": 2.2974409055
+  },
+  {
+    "diameter_m": 108.6525638621,
+    "energy_megatons": 19.81750484281751,
+    "id": "54324411",
+    "miss_distance_km": 13691349.622307826,
+    "name": "(2022 VV)",
+    "velocity_km_s": 9.0722584855
+  },
+  {
+    "diameter_m": 34.201092472,
+    "energy_megatons": 0.3776508216712418,
+    "id": "54383301",
+    "miss_distance_km": 1581140.653449575,
+    "name": "(2023 RV12)",
+    "velocity_km_s": 7.0914679765
+  },
+  {
+    "diameter_m": 88.7237682527,
+    "energy_megatons": 129.61608968497802,
+    "id": "54385247",
+    "miss_distance_km": 58298111.214424714,
+    "name": "(2023 SV1)",
+    "velocity_km_s": 31.4427401601
+  },
+  {
+    "diameter_m": 616.6517648376,
+    "energy_megatons": 32556.774280567515,
+    "id": "54417174",
+    "miss_distance_km": 71709225.57956995,
+    "name": "(2023 XJ16)",
+    "velocity_km_s": 27.196412103
+  },
+  {
+    "diameter_m": 9.6391775254,
+    "energy_megatons": 0.014231770239402997,
+    "id": "54486931",
+    "miss_distance_km": 10655639.437987436,
+    "name": "(2024 TW)",
+    "velocity_km_s": 9.2006898468
+  },
+  {
+    "diameter_m": 89.1332985597,
+    "energy_megatons": 18.794391758124764,
+    "id": "54542743",
+    "miss_distance_km": 12572284.43126897,
+    "name": "(2025 QK10)",
+    "velocity_km_s": 11.8906355112
+  },
+  {
+    "diameter_m": 62.2357573367,
+    "energy_megatons": 1.166127955910243,
+    "id": "54544998",
+    "miss_distance_km": 7514832.23213637,
+    "name": "(2025 RH2)",
+    "velocity_km_s": 5.0764958157
+  },
+  {
+    "diameter_m": 66.5640868805,
+    "energy_megatons": 2.9366488048682964,
+    "id": "54546468",
+    "miss_distance_km": 17635842.871379867,
+    "name": "(2025 SV2)",
+    "velocity_km_s": 7.2831111038
+  },
+  {
+    "diameter_m": 21.6790366099,
+    "energy_megatons": 0.10370495934239995,
+    "id": "54547367",
+    "miss_distance_km": 4590514.102836892,
+    "name": "(2025 SV6)",
+    "velocity_km_s": 7.3636085254
+  },
+  {
+    "diameter_m": 172.5202102606,
+    "energy_megatons": 71.91918715940739,
+    "id": "54549686",
+    "miss_distance_km": 4750727.168415926,
+    "name": "(2025 SE29)",
+    "velocity_km_s": 8.6380022778
+  },
+  {
+    "diameter_m": 23.5201441318,
+    "energy_megatons": 0.16628067928230167,
+    "id": "54549682",
+    "miss_distance_km": 288626876.706399,
+    "name": "(2025 TC)",
+    "velocity_km_s": 8.2510994958
+  },
+  {
+    "diameter_m": 20.1112923293,
+    "energy_megatons": 0.13505025966550124,
+    "id": "54550514",
+    "miss_distance_km": 767467.800502498,
+    "name": "(2025 TS)",
+    "velocity_km_s": 9.4045634501
+  },
+  {
+    "diameter_m": 202.3205415331,
+    "energy_megatons": 322.687279473291,
+    "id": "3781988",
+    "miss_distance_km": 35475623.887133636,
+    "name": "(2017 SJ20)",
+    "velocity_km_s": 14.407275199
+  },
+  {
+    "diameter_m": 156.3291544087,
+    "energy_megatons": 137.85493844382586,
+    "id": "3782063",
+    "miss_distance_km": 48088141.27427892,
+    "name": "(2017 TG1)",
+    "velocity_km_s": 13.8644323631
+  },
+  {
+    "diameter_m": 35.8129403019,
+    "energy_megatons": 1.160172196984066,
+    "id": "3873325",
+    "miss_distance_km": 38979307.74404503,
+    "name": "(2019 TA1)",
+    "velocity_km_s": 11.5998441923
+  },
+  {
+    "diameter_m": 32.6617897446,
+    "energy_megatons": 2.4211621405732138,
+    "id": "3879167",
+    "miss_distance_km": 40985592.45422097,
+    "name": "(2019 TA7)",
+    "velocity_km_s": 19.239902471
+  },
+  {
+    "diameter_m": 22.5964377109,
+    "energy_megatons": 0.5380129871973917,
+    "id": "54016464",
+    "miss_distance_km": 65518329.53028429,
+    "name": "(2020 GE1)",
+    "velocity_km_s": 15.7611284601
+  },
+  {
+    "diameter_m": 96.3917752536,
+    "energy_megatons": 31.85482916580288,
+    "id": "54130760",
+    "miss_distance_km": 62878798.771733634,
+    "name": "(2021 EN2)",
+    "velocity_km_s": 13.7650745955
+  },
+  {
+    "diameter_m": 141.2667581089,
+    "energy_megatons": 25.677538997799374,
+    "id": "54185582",
+    "miss_distance_km": 63581331.83654798,
+    "name": "(2021 PS16)",
+    "velocity_km_s": 6.9657458972
+  },
+  {
+    "diameter_m": 55.212826285,
+    "energy_megatons": 7.016504658928143,
+    "id": "54212589",
+    "miss_distance_km": 56141557.672842026,
+    "name": "(2021 UG1)",
+    "velocity_km_s": 14.9022326098
+  },
+  {
+    "diameter_m": 131.2320698525,
+    "energy_megatons": 86.97134668382749,
+    "id": "54321452",
+    "miss_distance_km": 7003623.234257313,
+    "name": "(2022 UL13)",
+    "velocity_km_s": 14.3178901636
+  },
+  {
+    "diameter_m": 35.4846052917,
+    "energy_megatons": 1.0519988491229866,
+    "id": "54385233",
+    "miss_distance_km": 381765.98515076,
+    "name": "(2023 RG22)",
+    "velocity_km_s": 11.1994981264
+  },
+  {
+    "diameter_m": 67.6145214758,
+    "energy_megatons": 3.710621086591689,
+    "id": "54393149",
+    "miss_distance_km": 24369091.562156066,
+    "name": "(2023 TV9)",
+    "velocity_km_s": 7.9967631506
+  },
+  {
+    "diameter_m": 17.3796080855,
+    "energy_megatons": 0.049390311321697,
+    "id": "54414145",
+    "miss_distance_km": 1066671.020395998,
+    "name": "(2023 XZ2)",
+    "velocity_km_s": 7.0796503768
+  },
+  {
+    "diameter_m": 128.836814636,
+    "energy_megatons": 280.0684645687954,
+    "id": "54486934",
+    "miss_distance_km": 65738013.01503335,
+    "name": "(2024 TZ)",
+    "velocity_km_s": 26.4133225174
+  },
+  {
+    "diameter_m": 19.9177363241,
+    "energy_megatons": 0.020601746135939385,
+    "id": "54545769",
+    "miss_distance_km": 1392247.342464769,
+    "name": "(2025 SH)",
+    "velocity_km_s": 3.7268588501
+  },
+  {
+    "diameter_m": 24.1902289492,
+    "energy_megatons": 0.29505611329396664,
+    "id": "54546119",
+    "miss_distance_km": 28654002.69310022,
+    "name": "(2025 SY)",
+    "velocity_km_s": 10.5376370915
+  },
+  {
+    "diameter_m": 66.1058629295,
+    "energy_megatons": 1.1670544540758239,
+    "id": "54546407",
+    "miss_distance_km": 26318432.321829703,
+    "name": "(2025 SB2)",
+    "velocity_km_s": 4.6391294296
+  },
+  {
+    "diameter_m": 84.186020114,
+    "energy_megatons": 10.290760594044354,
+    "id": "54546465",
+    "miss_distance_km": 20374562.029269174,
+    "name": "(2025 SS2)",
+    "velocity_km_s": 9.5854976818
+  },
+  {
+    "diameter_m": 35.1592804749,
+    "energy_megatons": 0.42473754261677354,
+    "id": "54549111",
+    "miss_distance_km": 9128731.393324722,
+    "name": "(2025 SV21)",
+    "velocity_km_s": 7.2152478505
+  },
+  {
+    "diameter_m": 75.3078031602,
+    "energy_megatons": 11.543854230989579,
+    "id": "54549117",
+    "miss_distance_km": 11673450.253183372,
+    "name": "(2025 SN23)",
+    "velocity_km_s": 11.9995883073
+  },
+  {
+    "diameter_m": 23.5201441318,
+    "energy_megatons": 0.08993428897831596,
+    "id": "54549696",
+    "miss_distance_km": 1997883.233957602,
+    "name": "(2025 TG)",
+    "velocity_km_s": 6.0681119133
+  },
+  {
+    "diameter_m": 701.5198735305,
+    "energy_megatons": 11601.214314616693,
+    "id": "2247517",
+    "miss_distance_km": 10842495.315741563,
+    "name": "247517 (2002 QY6)",
+    "velocity_km_s": 13.3795853397
+  },
+  {
+    "diameter_m": 765.6670867916,
+    "energy_megatons": 14699.791944646911,
+    "id": "2319988",
+    "miss_distance_km": 23753210.550295006,
+    "name": "319988 (2007 DK)",
+    "velocity_km_s": 13.2082877911
+  },
+  {
+    "diameter_m": 19.6806745089,
+    "energy_megatons": 0.09913955896290887,
+    "id": "3092506",
+    "miss_distance_km": 73638936.73505324,
+    "name": "(2001 WJ4)",
+    "velocity_km_s": 8.3236616917
+  },
+  {
+    "diameter_m": 68.2401509401,
+    "energy_megatons": 18.43820322330971,
+    "id": "3746623",
+    "miss_distance_km": 2196364.945621123,
+    "name": "(2016 EF156)",
+    "velocity_km_s": 17.5812693617
+  },
+  {
+    "diameter_m": 142.5738833281,
+    "energy_megatons": 149.40023626969048,
+    "id": "3830865",
+    "miss_distance_km": 17454947.22708292,
+    "name": "(2018 SP1)",
+    "velocity_km_s": 16.5716812506
+  },
+  {
+    "diameter_m": 450.8582061718,
+    "energy_megatons": 7447.485981277271,
+    "id": "54051291",
+    "miss_distance_km": 22063999.767246377,
+    "name": "(2020 QW2)",
+    "velocity_km_s": 20.8063440814
+  },
+  {
+    "diameter_m": 12.8244863243,
+    "energy_megatons": 0.03217255866038911,
+    "id": "54296533",
+    "miss_distance_km": 13232144.135193909,
+    "name": "(2022 QE1)",
+    "velocity_km_s": 9.0143357483
+  },
+  {
+    "diameter_m": 34.9816249114,
+    "energy_megatons": 0.9606694993659081,
+    "id": "54547735",
+    "miss_distance_km": 7725706.541591969,
+    "name": "(2025 SY10)",
+    "velocity_km_s": 10.9339713166
+  },
+  {
+    "diameter_m": 27.850947766,
+    "energy_megatons": 0.2811028014897957,
+    "id": "54549110",
+    "miss_distance_km": 2845700.544110071,
+    "name": "(2025 SN21)",
+    "velocity_km_s": 8.3257528748
+  },
+  {
+    "diameter_m": 47.9115232701,
+    "energy_megatons": 1.46619847802428,
+    "id": "54549113",
+    "miss_distance_km": 4277497.778576729,
+    "name": "(2025 SJ22)",
+    "velocity_km_s": 8.4272778166
+  },
+  {
+    "diameter_m": 19.5902500233,
+    "energy_megatons": 0.05927774152507243,
+    "id": "54549130",
+    "miss_distance_km": 3948289.45958095,
+    "name": "(2025 SO27)",
+    "velocity_km_s": 6.4809213857
+  },
+  {
+    "diameter_m": 132.507353087,
+    "energy_megatons": 141.13898618867148,
+    "id": "54550502",
+    "miss_distance_km": 4434195.054854171,
+    "name": "(2025 TL)",
+    "velocity_km_s": 17.976884406
+  },
+  {
+    "diameter_m": 14.6163851626,
+    "energy_megatons": 0.021679404929425765,
+    "id": "54550507",
+    "miss_distance_km": 9138104.791944673,
+    "name": "(2025 TO)",
+    "velocity_km_s": 6.0815545653
+  },
+  {
+    "diameter_m": 49.435619262,
+    "energy_megatons": 2.140690165910036,
+    "id": "3428698",
+    "miss_distance_km": 3945099.150365117,
+    "name": "(2008 TD)",
+    "velocity_km_s": 9.7155599529
+  },
+  {
+    "diameter_m": 22.5964377109,
+    "energy_megatons": 0.6739973414289278,
+    "id": "3667048",
+    "miss_distance_km": 58328039.53990011,
+    "name": "(2014 GQ17)",
+    "velocity_km_s": 17.6408708639
+  },
+  {
+    "diameter_m": 156.3291544087,
+    "energy_megatons": 237.7817748208274,
+    "id": "3728859",
+    "miss_distance_km": 62938627.94155571,
+    "name": "(2015 SZ16)",
+    "velocity_km_s": 18.2087532711
+  },
+  {
+    "diameter_m": 70.151987353,
+    "energy_megatons": 6.964458478448887,
+    "id": "3799876",
+    "miss_distance_km": 38837562.78983387,
+    "name": "(2018 ES3)",
+    "velocity_km_s": 10.366558572
+  },
+  {
+    "diameter_m": 83.5679942816,
+    "energy_megatons": 15.376278492137986,
+    "id": "3878561",
+    "miss_distance_km": 46937218.72315059,
+    "name": "(2019 TS1)",
+    "velocity_km_s": 11.8472225625
+  },
+  {
+    "diameter_m": 58.3498815511,
+    "energy_megatons": 7.256192843235932,
+    "id": "3879165",
+    "miss_distance_km": 51688903.94624557,
+    "name": "(2019 TY6)",
+    "velocity_km_s": 13.9490726817
+  },
+  {
+    "diameter_m": 20.4192590455,
+    "energy_megatons": 1.0488817741531922,
+    "id": "3991587",
+    "miss_distance_km": 18730846.00797836,
+    "name": "(2020 CR2)",
+    "velocity_km_s": 25.6185295526
+  },
+  {
+    "diameter_m": 53.7081234856,
+    "energy_megatons": 9.327757344008965,
+    "id": "54154694",
+    "miss_distance_km": 66765507.30035439,
+    "name": "(2021 LA1)",
+    "velocity_km_s": 17.9093386601
+  },
+  {
+    "diameter_m": 115.8884031771,
+    "energy_megatons": 11.193606004303874,
+    "id": "54193830",
+    "miss_distance_km": 56892964.63106153,
+    "name": "(2021 RF4)",
+    "velocity_km_s": 6.1897903173
+  },
+  {
+    "diameter_m": 37.3284518745,
+    "energy_megatons": 1.153940540171352,
+    "id": "54202332",
+    "miss_distance_km": 2592061.260029478,
+    "name": "(2021 TD1)",
+    "velocity_km_s": 10.8713291418
+  },
+  {
+    "diameter_m": 478.6741544192,
+    "energy_megatons": 13287.52145069467,
+    "id": "54203006",
+    "miss_distance_km": 69018304.96071689,
+    "name": "(2021 SZ4)",
+    "velocity_km_s": 25.404632591
+  },
+  {
+    "diameter_m": 328.1254971615,
+    "energy_megatons": 1282.0365329654855,
+    "id": "54215217",
+    "miss_distance_km": 60021984.24282637,
+    "name": "(2021 VO)",
+    "velocity_km_s": 13.9040438767
+  },
+  {
+    "diameter_m": 16.5973968696,
+    "energy_megatons": 0.2564055480753539,
+    "id": "54265894",
+    "miss_distance_km": 57834627.1085505,
+    "name": "(2022 FF3)",
+    "velocity_km_s": 17.284413128
+  },
+  {
+    "diameter_m": 57.5492911629,
+    "energy_megatons": 13.835149022161211,
+    "id": "54352299",
+    "miss_distance_km": 69921662.81383362,
+    "name": "(2023 FL4)",
+    "velocity_km_s": 19.6644973513
+  },
+  {
+    "diameter_m": 91.209479795,
+    "energy_megatons": 48.11032974684084,
+    "id": "54390823",
+    "miss_distance_km": 66948265.07909795,
+    "name": "(2023 TT)",
+    "velocity_km_s": 18.378501406
+  },
+  {
+    "diameter_m": 24.3242791478,
+    "energy_megatons": 2.004164835194312,
+    "id": "54392067",
+    "miss_distance_km": 70764563.17111452,
+    "name": "(2023 TM3)",
+    "velocity_km_s": 27.236898223
+  },
+  {
+    "diameter_m": 106.8169021866,
+    "energy_megatons": 38.64143374215932,
+    "id": "54546621",
+    "miss_distance_km": 9826487.424155291,
+    "name": "(2025 SS3)",
+    "velocity_km_s": 12.9962346815
+  },
+  {
+    "diameter_m": 107.2111559937,
+    "energy_megatons": 53.54797843941901,
+    "id": "54549112",
+    "miss_distance_km": 15191996.942715213,
+    "name": "(2025 SG22)",
+    "velocity_km_s": 15.2146676137
+  },
+  {
+    "diameter_m": 54.3550599122,
+    "energy_megatons": 8.70902331581563,
+    "id": "54549680",
+    "miss_distance_km": 1312233.156440403,
+    "name": "(2025 SZ27)",
+    "velocity_km_s": 16.9971323344
+  },
+  {
+    "diameter_m": 567.5968528656,
+    "energy_megatons": 11389.118966036502,
+    "id": "3002856",
+    "miss_distance_km": 3036196.661633844,
+    "name": "(1991 GO)",
+    "velocity_km_s": 18.2152859694
+  },
+  {
+    "diameter_m": 300.6353038309,
+    "energy_megatons": 724.3331100310647,
+    "id": "3346460",
+    "miss_distance_km": 37463605.58215104,
+    "name": "(2006 SS134)",
+    "velocity_km_s": 11.916812274
+  },
+  {
+    "diameter_m": 35.8129403019,
+    "energy_megatons": 0.22139183431974777,
+    "id": "3471356",
+    "miss_distance_km": 7770319.693182304,
+    "name": "(2009 TJ4)",
+    "velocity_km_s": 5.0672429646
+  },
+  {
+    "diameter_m": 71.4562101727,
+    "energy_megatons": 22.42071437615639,
+    "id": "3730802",
+    "miss_distance_km": 50988297.7319164,
+    "name": "(2015 TT238)",
+    "velocity_km_s": 18.0932111771
+  },
+  {
+    "diameter_m": 65.4696439067,
+    "energy_megatons": 12.785643046799919,
+    "id": "3856710",
+    "miss_distance_km": 7238346.855022348,
+    "name": "(2019 SG4)",
+    "velocity_km_s": 15.5794534113
+  },
+  {
+    "diameter_m": 17.948988478,
+    "energy_megatons": 0.6997647770674933,
+    "id": "3994621",
+    "miss_distance_km": 63551319.197713055,
+    "name": "(2020 DT2)",
+    "velocity_km_s": 25.3902494828
+  },
+  {
+    "diameter_m": 82.0427064882,
+    "energy_megatons": 15.602515752854394,
+    "id": "54054367",
+    "miss_distance_km": 7622964.818846149,
+    "name": "(2020 SA)",
+    "velocity_km_s": 12.2684089446
+  },
+  {
+    "diameter_m": 52.4855773378,
+    "energy_megatons": 4.54277077056943,
+    "id": "54157355",
+    "miss_distance_km": 28638124.315339275,
+    "name": "(2021 LV2)",
+    "velocity_km_s": 12.9375291242
+  },
+  {
+    "diameter_m": 56.239309364,
+    "energy_megatons": 4.332056195508197,
+    "id": "54235406",
+    "miss_distance_km": 34165500.823609374,
+    "name": "(2022 AG)",
+    "velocity_km_s": 11.3903736238
+  },
+  {
+    "diameter_m": 75.5161740526,
+    "energy_megatons": 8.608890490499585,
+    "id": "54253542",
+    "miss_distance_km": 17991661.091019344,
+    "name": "(2022 EG4)",
+    "velocity_km_s": 10.3196393719
+  },
+  {
+    "diameter_m": 55.980913209,
+    "energy_megatons": 19.228266152229676,
+    "id": "54391010",
+    "miss_distance_km": 73366326.27188753,
+    "name": "(2023 TF1)",
+    "velocity_km_s": 24.1635640375
+  },
+  {
+    "diameter_m": 35.6483947878,
+    "energy_megatons": 2.340574834109562,
+    "id": "54395903",
+    "miss_distance_km": 44056272.18783896,
+    "name": "(2023 UJ1)",
+    "velocity_km_s": 16.5902218913
+  },
+  {
+    "diameter_m": 17.4598287116,
+    "energy_megatons": 0.01816994688442758,
+    "id": "54415896",
+    "miss_distance_km": 71025358.5291457,
+    "name": "(2023 XU10)",
+    "velocity_km_s": 4.2644964573
+  },
+  {
+    "diameter_m": 125.3256537574,
+    "energy_megatons": 36.62432025772183,
+    "id": "54543546",
+    "miss_distance_km": 2729884.206882843,
+    "name": "(2025 QL23)",
+    "velocity_km_s": 9.9557897302
+  },
+  {
+    "diameter_m": 13.4474512572,
+    "energy_megatons": 0.009013220708111941,
+    "id": "54546120",
+    "miss_distance_km": 16062758.556902764,
+    "name": "(2025 SZ)",
+    "velocity_km_s": 4.4435588061
+  },
+  {
+    "diameter_m": 53.3875484759,
+    "energy_megatons": 5.194705279812883,
+    "id": "54548206",
+    "miss_distance_km": 12831028.847381823,
+    "name": "(2025 SQ12)",
+    "velocity_km_s": 13.4856345229
+  },
+  {
+    "diameter_m": 24.4703385988,
+    "energy_megatons": 1.4140770848780844,
+    "id": "54549109",
+    "miss_distance_km": 15613012.217907883,
+    "name": "(2025 SY21)",
+    "velocity_km_s": 22.6739649719
+  },
+  {
+    "diameter_m": 65.8021340787,
+    "energy_megatons": 2.99323372530413,
+    "id": "54549128",
+    "miss_distance_km": 11092754.585547376,
+    "name": "(2025 SJ27)",
+    "velocity_km_s": 7.4810273762
+  },
+  {
+    "diameter_m": 27.9795018999,
+    "energy_megatons": 0.5643460384964198,
+    "id": "54549684",
+    "miss_distance_km": 1339275.97836009,
+    "name": "(2025 TB)",
+    "velocity_km_s": 11.7155766421
+  },
+  {
+    "diameter_m": 2.7141883295,
+    "energy_megatons": 0.0005669332535793495,
+    "id": "54549695",
+    "miss_distance_km": 6371108.121075425,
+    "name": "(2025 TF)",
+    "velocity_km_s": 12.2901418307
+  },
+  {
+    "diameter_m": 8.8560483469,
+    "energy_megatons": 0.028229307927754,
+    "id": "54550509",
+    "miss_distance_km": 107638.764140909,
+    "name": "(2025 TP)",
+    "velocity_km_s": 14.7143487305
+  },
+  {
+    "diameter_m": 10.1493908826,
+    "energy_megatons": 0.016583047910970542,
+    "id": "54550511",
+    "miss_distance_km": 627907.58854461,
+    "name": "(2025 TQ)",
+    "velocity_km_s": 9.192277083
+  },
+  {
+    "diameter_m": 68.9350315631,
+    "energy_megatons": 9.56747451663716,
+    "id": "54550518",
+    "miss_distance_km": 10501167.63946326,
+    "name": "(2025 TW)",
+    "velocity_km_s": 12.4735360388
+  }
+]

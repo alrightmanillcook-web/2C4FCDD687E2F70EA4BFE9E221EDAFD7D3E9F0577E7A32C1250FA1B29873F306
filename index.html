@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asteroid Defense Simulator - Educational Tool</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js"
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Info Panel - Top Right */
+    #infoPanel {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid #00aaff;
+      max-width: 300px;
+      z-index: 10;
+    }
+
+    #infoPanel h3 {
+      margin: 0 0 10px 0;
+      color: #00aaff;
+      font-size: 16px;
+    }
+
+    #infoPanel p {
+      margin: 5px 0;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .info-label {
+      color: #aaa;
+      font-weight: normal;
+    }
+
+    .info-value {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Control Panel - Left Side */
+    #controlPanel {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 3px solid #00aaff;
+      max-width: 320px;
+      z-index: 10;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    #controlPanel h2 {
+      margin: 0 0 15px 0;
+      color: #00aaff;
+      font-size: 18px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #333;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section h4 {
+      margin: 0 0 10px 0;
+      color: #66ccff;
+      font-size: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #444;
+      background: #222;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    input[type="range"] {
+      padding: 0;
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .slider-value {
+      display: inline-block;
+      min-width: 40px;
+      text-align: right;
+      font-weight: bold;
+      color: #00aaff;
+      margin-left: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #launchBtn {
+      background: linear-gradient(135deg, #00aaff, #0077cc);
+      color: white;
+    }
+
+    #launchBtn:hover:not(:disabled) {
+      background: linear-gradient(135deg, #0099ee, #0066bb);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4);
+    }
+
+    #launchBtn:disabled {
+      background: #555;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    #resetBtn {
+      background: #444;
+      color: white;
+    }
+
+    #resetBtn:hover:not(:disabled) {
+      background: #555;
+    }
+
+    #status {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      background: rgba(0, 170, 255, 0.2);
+      border: 1px solid #00aaff;
+      color: #00aaff;
+    }
+
+    #status.warning {
+      background: rgba(255, 165, 0, 0.2);
+      border-color: #ffaa00;
+      color: #ffaa00;
+    }
+
+    #status.error {
+      background: rgba(255, 68, 68, 0.2);
+      border-color: #ff4444;
+      color: #ff4444;
+    }
+
+    #status.success {
+      background: rgba(68, 255, 68, 0.2);
+      border-color: #44ff44;
+      color: #44ff44;
+    }
+
+    /* Help Button */
+    #helpBtn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(0, 170, 255, 0.9);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    #helpBtn:hover {
+      background: rgba(0, 170, 255, 1);
+      transform: scale(1.1);
+    }
+
+    /* Loading Overlay */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #loading h2 {
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    .spinner {
+      border: 4px solid #333;
+      border-top: 4px solid #00aaff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Defense Method Info */
+    .defense-info {
+      font-size: 11px;
+      color: #999;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    /* Scrollbar Styling */
+    #controlPanel::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #controlPanel::-webkit-scrollbar-track {
+      background: #222;
+      border-radius: 4px;
+    }
+
+    #controlPanel::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+
+    #controlPanel::-webkit-scrollbar-thumb:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <h2>Loading Asteroid Data...</h2>
+    <div class="spinner"></div>
+    <p style="margin-top: 20px; color: #888;">Fetching real Near-Earth Objects</p>
+  </div>
+
+  <!-- Control Panel -->
+  <div id="controlPanel">
+    <h2>Asteroid Defense Simulator</h2>
+    
+    <div class="section">
+      <h4>Select Asteroid</h4>
+      <label for="asteroidSelect">Choose a real Near-Earth Object:</label>
+      <select id="asteroidSelect" disabled>
+        <option>Loading...</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <h4>Defense Method</h4>
+      <label for="defenseSelect">Choose your defense strategy:</label>
+      <select id="defenseSelect">
+        <option value="kinetic">Kinetic Impactor</option>
+        <option value="nuclear">Nuclear Deflection</option>
+        <option value="gravity">Gravity Tractor</option>
+        <option value="laser">Laser Ablation</option>
+      </select>
+      <div class="defense-info" id="defenseInfo">
+        Fast impact deflection - like NASA's DART mission
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Mission Parameters</h4>
+      <label>
+        Force Multiplier: <span class="slider-value" id="strengthValue">5</span>x
+      </label>
+      <input type="range" id="strengthSlider" min="1" max="10" value="5" step="0.5">
+
+      <label>
+        Impact Angle: <span class="slider-value" id="angleValue">0</span>°
+      </label>
+      <input type="range" id="angleSlider" min="0" max="360" value="0">
+    </div>
+
+    <div class="section">
+      <h4>View Settings</h4>
+      <label>
+        Camera FOV: <span class="slider-value" id="fovValue">60</span>°
+      </label>
+      <input type="range" id="fovSlider" min="30" max="120" value="60">
+
+      <label>
+        Scene Scale: <span class="slider-value" id="scaleValue">1.0</span>x
+      </label>
+      <input type="range" id="scaleSlider" min="0.5" max="3" step="0.1" value="1">
+    </div>
+
+    <button id="launchBtn" disabled>Launch Defense Mission</button>
+    <button id="resetBtn" disabled>Reset Simulation</button>
+
+    <div id="status">Initializing simulator...</div>
+  </div>
+
+  <!-- Info Panel -->
+  <div id="infoPanel">
+    <h3>Asteroid Information</h3>
+    <p><span class="info-label">Name:</span> <span class="info-value" id="infoName">-</span></p>
+    <p><span class="info-label">Diameter:</span> <span class="info-value" id="infoDiameter">-</span></p>
+    <p><span class="info-label">Velocity:</span> <span class="info-value" id="infoVelocity">-</span></p>
+    <p><span class="info-label">Distance to Earth:</span> <span class="info-value" id="infoDistance">-</span></p>
+    <p style="margin-top: 12px; font-size: 11px; color: #888; line-height: 1.3;">
+      This simulator uses real asteroid data to demonstrate various planetary defense strategies currently being researched by space agencies.
+    </p>
+  </div>
+
+  <!-- Help Button -->
+  <button id="helpBtn" title="Show Help">?</button>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
