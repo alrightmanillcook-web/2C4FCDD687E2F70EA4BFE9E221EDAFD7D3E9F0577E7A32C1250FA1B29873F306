@@ -39,7 +39,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>MapTiler 卫星地图 - 多功能定位</title>
+  <title>METEOR MADNESS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
   <style>
@@ -268,7 +268,7 @@
     
     map.setMaxBounds([[-179.999, -85], [179.999, 85]]);
     map.addControl(new maplibregl.NavigationControl());
-    
+    map.addControl(new maplibregl.FullscreenControl());
     
     let marker = null;
     let clickModeEnabled = false;

@@ -457,16 +457,26 @@ let angle = 0;
 let targetCalculated = false;
 
 // 创建陨石
-function createMeteor(size = 1.5) {
-  const geometry = new THREE.SphereGeometry(size, 32, 32);
-  const material = new THREE.MeshStandardMaterial({
-    color: 0x8b4513,
-    roughness: 0.9,
-    metalness: 0.1
-  });
-  const mesh = new THREE.Mesh(geometry, material);
-  mesh.position.copy(start);
-  scene.add(mesh);
+function createMeteor() {
+     const geometry = new THREE.SphereGeometry(0.8, 32, 32);
+     geometry.computeVertexNormals();
+    const textureLoader = new THREE.TextureLoader();
+    const material = new THREE.MeshStandardMaterial({
+         map: textureLoader.load("rock.png", undefined, undefined, () => console.error("Failed to load rock.png")),
+         roughnessMap: textureLoader.load("rockroughness.png", undefined, undefined, () => console.error("Failed to load rockroughness.png")),
+         normalMap: textureLoader.load("rocknormal.png", undefined, undefined, () => console.error("Failed to load rocknormal.png")),
+         bumpMap: textureLoader.load("rockbumpmap.png", undefined, undefined, () => console.error("Failed to load rockbumpmap.png")),
+         displacementMap: textureLoader.load("rockdisplacementmap.png", undefined, undefined, () => console.error("Failed to load rockdisplacementmap.png")),
+         displacementScale: 0.4,
+         aoMap: textureLoader.load("rockao.png", undefined, undefined, () => console.error("Failed to load rockao.png")),
+         side: THREE.DoubleSide,
+         emissive: new THREE.Color(0xff3300),
+         emissiveIntensity: 1.5
+     });
+     const meteor = new THREE.Mesh(geometry, material);
+   scene.add(mesh);
+ }
+
   
   // 尾焰效果
   const trailGeometry = new THREE.ConeGeometry(size * 0.8, size * 4, 8);
@@ -481,7 +491,7 @@ function createMeteor(size = 1.5) {
   mesh.add(trail);
   
   return mesh;
-}
+
 
 // 增强版爆炸效果
 function createExplosion(position) {
